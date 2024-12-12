@@ -29,3 +29,10 @@ class TestStringCalculator:
         actual_result = StringCalculator().add(numbers)
 
         assert actual_result == 45
+
+    def test_it_recognises_newlines_and_commas_as_separators(self):
+        numbers = '1\n2,3'
+        
+        actual_result = StringCalculator().add(numbers)
+
+        assert actual_result == 6
