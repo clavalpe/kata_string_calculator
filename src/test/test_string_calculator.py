@@ -9,9 +9,16 @@ class TestStringCalculator:
 
         assert actual_result == 0
 
-    def test_when_it_receives_one_string_number_it_returns_the_number(self):
+    def test_it_returns_the_number_when_it_receives_one_string_number(self):
         numbers = '4'
         
         actual_result = StringCalculator().add(numbers)
 
         assert actual_result == 4
+
+    def test_it_sums_two_numbers(self):
+        numbers = '1,2'
+        
+        actual_result = StringCalculator().add(numbers)
+
+        assert actual_result == 3
