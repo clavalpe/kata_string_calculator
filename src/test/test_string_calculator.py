@@ -22,3 +22,10 @@ class TestStringCalculator:
         actual_result = StringCalculator().add(numbers)
 
         assert actual_result == 3
+
+    def test_it_handles_an_unknown_amount_of_numbers(self):
+        numbers = '1,2,3,4,5,6,7,8,9'
+        
+        actual_result = StringCalculator().add(numbers)
+
+        assert actual_result == 45
