@@ -37,7 +37,7 @@ class TestStringCalculator:
 
         assert actual_result == 6
 
-    def test_it_upports_custom_separators(self):
+    def test_it_supports_custom_separators(self):
         numbers = '//;\n1;2'
         
         actual_result = StringCalculator().add(numbers)

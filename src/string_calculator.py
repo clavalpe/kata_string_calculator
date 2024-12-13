@@ -3,6 +3,10 @@ class StringCalculator:
         if not numbers:
             return 0
                 
+        if numbers[0:2] == '//':
+            separator = numbers[2] 
+            return self._sum_numbers_custom_separator(numbers[4:], separator)
+            
         return self._sum_numbers(numbers)
 
     def _sum_numbers(self, numbers: str) -> int:
@@ -13,3 +17,7 @@ class StringCalculator:
             sum +=  int(number)
 
         return sum
+    
+    def _sum_numbers_custom_separator(self, numbers: str, separator: str) -> int:
+        numbers = numbers.replace(separator, ',')
+        return self._sum_numbers(numbers)
