@@ -18,7 +18,7 @@ class StringCalculator:
         sum = 0
         for number in list_of_numbers:
             if int(number) < 0:
-                raise NegativeNumbersNotAllowed()
+                raise NegativeNumbersNotAllowed(number)
             sum +=  int(number)
 
         return sum

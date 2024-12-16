@@ -51,3 +51,9 @@ class TestStringCalculator:
 
         with pytest.raises(NegativeNumbersNotAllowed, match='error: negatives not allowed: -2'):
             StringCalculator().add(numbers)
+
+    def test_it_disallow_several_negative_numbers(self):
+        numbers = '1,-2,-3'
+
+        with pytest.raises(NegativeNumbersNotAllowed, match='error: negatives not allowed: -2 -3'):
+            StringCalculator().add(numbers)
