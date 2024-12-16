@@ -1,3 +1,6 @@
+from exceptions import NegativeNumbersNotAllowed
+
+
 class StringCalculator:
     def add(self, numbers: str) -> int:
         if not numbers:
@@ -14,6 +17,8 @@ class StringCalculator:
         list_of_numbers = numbers.split(',')
         sum = 0
         for number in list_of_numbers:
+            if int(number) < 0:
+                raise NegativeNumbersNotAllowed()
             sum +=  int(number)
 
         return sum
