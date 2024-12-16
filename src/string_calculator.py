@@ -15,11 +15,17 @@ class StringCalculator:
     def _sum_numbers(self, numbers: str) -> int:
         numbers = numbers.replace('\n', ',')
         list_of_numbers = numbers.split(',')
+
         sum = 0
+        negative_numbers = ''
+
         for number in list_of_numbers:
             if int(number) < 0:
-                raise NegativeNumbersNotAllowed(number)
+                negative_numbers += ' ' + number
             sum +=  int(number)
+
+        if negative_numbers:
+            raise NegativeNumbersNotAllowed(negative_numbers)
 
         return sum
     
