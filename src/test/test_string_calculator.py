@@ -57,3 +57,10 @@ class TestStringCalculator:
 
         with pytest.raises(NegativeNumbersNotAllowed, match='error: negatives not allowed: -2 -3'):
             StringCalculator().add(numbers)
+
+    def test_it_ignores_bigger_numbers_than_1000(self):
+        numbers = '1001, 2'
+        
+        actual_result = StringCalculator().add(numbers)
+
+        assert actual_result == 2 
