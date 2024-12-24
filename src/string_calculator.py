@@ -16,9 +16,8 @@ class StringCalculator:
         return numbers[0:2] == "//"
 
     def _sum_numbers(self, numbers: str) -> int:
-        numbers = numbers.replace("\n", ",")
-        list_of_numbers = numbers.split(",")
-
+        list_of_numbers = self._clean_and_split_numbers(numbers)
+        
         sum = 0
         negative_numbers = ""
 
@@ -36,6 +35,11 @@ class StringCalculator:
             raise NegativeNumbersNotAllowed(negative_numbers)
 
         return sum
+
+    def _clean_and_split_numbers(self, numbers):
+        numbers = numbers.replace("\n", ",")
+        list_of_numbers = numbers.split(",")
+        return list_of_numbers
 
     def _sum_numbers_custom_separator(self, numbers: str, separator: str) -> int:
         numbers = numbers.replace(separator, ",")
